@@ -1,0 +1,60 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-thread_safety
+
+
+AllCops:
+  TargetRubyVersion: 2.5
+  NewCops: enable
+  Exclude:
+    - "coverage/**/*"
+    - "db/schema.rb"
+    - "db/migrate/**/*"
+    - "doc/**/*"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "vendor/**/*"
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Max: 40
+  ExcludedMethods:
+    - "describe"
+    - "context"
+
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_slug
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/NestedGroups:
+  Max: 6
+
